@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Room</title>
+</head>
+<body>
+    <h2>Hotel Room Booking</h2>
+
+    <form method="POST">
+        <label>Customer Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="text" name="phone" required><br><br>
+
+        <label>ID Proof:</label><br>
+        <input type="text" name="id_proof" required><br><br>
+
+        <label>Select Room:</label><br>
+        <select name="room_id" required>
+            {% for room in rooms %}
+            <option value="{{ room.id }}">{{ room.room_number }} - {{ room.room_type }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Check-in Date:</label><br>
+        <input type="date" name="check_in" required><br><br>
+
+        <label>Check-out Date:</label><br>
+        <input type="date" name="check_out" required><br><br>
+
+        <label>Total Amount:</label><br>
+        <input type="number" name="total_amount" required><br><br>
+
+        <button type="submit">Book Room</button>
+    </form>
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
